@@ -1,0 +1,17 @@
+<div class="contact-list-container">
+  <h2>Contact List</h2>
+  <input type="text" placeholder="Search contacts..." [(ngModel)]="searchQuery" (input)="searchContacts()">
+
+  <ul class="contact-list">
+    <li *ngFor="let contact of contacts">
+      <a [routerLink]="['/contact-detail', contact.id]">
+        {{ contact.firstName }} {{ contact.lastName }}
+      </a>
+      <button (click)="editContact(contact.id)">Edit</button>
+      <button (click)="detailsContact(contact.id)">Details</button>
+      <button (click)="deleteContact(contact.id)">Delete</button>
+    </li>
+  </ul>
+
+  <button (click)="addContact()">Add New Contact</button>
+</div>

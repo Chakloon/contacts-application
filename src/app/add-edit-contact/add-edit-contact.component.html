@@ -1,0 +1,22 @@
+<div class="contact-form-container">
+  <h2>{{ isEditMode ? 'Edit Contact' : 'Add New Contact' }}</h2>
+
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <label for="firstName">First Name:</label>
+    <input id="firstName" formControlName="firstName" type="text">
+
+    <label for="lastName">Last Name:</label>
+    <input id="lastName" formControlName="lastName" type="text">
+
+    <label for="phone">Phone Number:</label>
+    <input id="phone" formControlName="phone" type="text">
+
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email" type="email">
+
+    <label for="address">Address:</label>
+    <input id="address" formControlName="address" type="text">
+
+    <button type="submit">{{ isEditMode ? 'Update' : 'Add' }}</button>
+  </form>
+</div>
